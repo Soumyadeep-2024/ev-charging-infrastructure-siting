@@ -39,55 +39,50 @@ Objective:
 
 ## Step 2: Think Like an Investor
 
-(Your explanation)
 
 ---
 
 ## Step 3: Identify Factors Affecting Demand
 
-(Your explanation)
+
 
 ---
 
 ## Step 4: Convert Business Questions into Data
 
-(Your table)
+
 
 ---
 
 ## Step 5: Exploratory Data Analysis
 
-(Your explanation)
 
 ---
 
 ## Step 6: Site Scoring Logic
 
-(Your explanation)
+
 
 ---
 
 ## Step 7: Machine Learning Approach
 
-(Your explanation)
-
 ---
 
 ## Step 8: Financial Analysis
 
-(Your explanation)
+
 
 ---
 
 ## Step 9: Business Recommendation
 
-(Your explanation)
+
 
 ---
 
 ## Step 10: Validation
 
-(Your explanation)
 
 ---
 
