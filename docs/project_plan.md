@@ -1,131 +1,65 @@
-# Project Planning
-
-## Problem Statement
-
-Cities need to determine where to install new Electric Vehicle (EV) charging stations. Since budget is limited, every charging station should be installed where it can achieve high utilization and recover investment quickly.
-
----
-
-# Business Objective
-
-Develop a decision support system that recommends optimal EV charging station locations based on demand, infrastructure availability, and financial feasibility.
-
----
-
-# Thought Process
-
-## Step 1: Understand the Business Problem
-
-Instead of starting with coding, begin by understanding the business challenge.
-
-Questions considered:
-
-- Why are cities installing EV chargers?
-- What makes one location better than another?
-- What happens if chargers are installed in poor locations?
-
-Business Risks:
-
-- Low utilization
-- Wasted investment
-- Longer payback period
-- Poor customer experience
-
-Objective:
-
-> Maximize charger utilization while minimizing installation cost.
-
----
-
-## Step 2: Think Like an Investor
-
-
----
-
-## Step 3: Identify Factors Affecting Demand
-
-
-
----
-
-## Step 4: Convert Business Questions into Data
-
-
-
----
-
-## Step 5: Exploratory Data Analysis
-
-
----
-
-## Step 6: Site Scoring Logic
-
-
-
----
-
-## Step 7: Machine Learning Approach
-
----
-
-## Step 8: Financial Analysis
-
-
-
----
-
-## Step 9: Business Recommendation
-
-
-
----
-
-## Step 10: Validation
-
-
----
-
-# Overall Project Workflow
-
-Business Problem
-
-↓
-
-Identify Factors
-
-↓
-
-Collect Data
-
-↓
-
-Clean Data
-
-↓
-
-EDA
-
-↓
-
-Feature Engineering
-
-↓
-
-Machine Learning
-
-↓
-
-Site Ranking
-
-↓
-
-ROI Analysis
-
-↓
-
-Dashboard
-
-↓
-
-Recommendations
+# Project Plan
+
+## Theme
+CTY-12 – EV Charging Infrastructure Siting
+
+## Project Objective
+
+Identify and rank suitable locations for EV charging infrastructure
+using data-driven analysis of EV demand, accessibility, existing
+infrastructure, locality characteristics and financial viability.
+
+## Project Phases
+
+### Phase 1 – Planning
+- Define business problem
+- Select target city
+- Identify datasets
+
+### Phase 2 – Data Collection
+- EV registrations
+- Charging stations
+- Geographic data
+- Population
+- Environmental data
+- Economic indicators
+
+### Phase 3 – Data Preparation
+- Cleaning
+- Missing-value treatment
+- Geographic standardization
+- Data integration
+
+### Phase 4 – Analysis
+- EV demand
+- Infrastructure gap
+- Accessibility
+- Locality analysis
+- Environmental analysis
+
+### Phase 5 – Scoring
+- Demand score
+- Accessibility score
+- Infrastructure-gap score
+- Financial score
+- Overall location score
+
+### Phase 6 – Financial Analysis
+- Revenue estimation
+- Operating cost estimation
+- Payback period
+
+### Phase 7 – Dashboard
+- Interactive map
+- Location leaderboard
+- Comparative analysis
+
+### Phase 8 – Validation
+- Sensitivity analysis
+- Model validation
+- Limitations
+
+### Phase 9 – Documentation
+- Final report
+- R Markdown
+- Presentation
