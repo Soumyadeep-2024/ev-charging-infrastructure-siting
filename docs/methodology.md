@@ -1,59 +1,74 @@
 # Methodology
 
-## Data Collection
+## 1. Data Collection
 
-- EV Registration Dataset
-- Parking Dataset
-- Traffic Dataset
+Collect data from government sources, APIs,
+open geographic datasets and other verified sources.
 
+## 2. Data Preprocessing
 
-Reason:
-These datasets help estimate charging demand.
+- Handle missing values
+- Remove duplicates
+- Standardize units
+- Standardize geographic coordinates
+- Align time periods
 
----
+## 3. Geographic Integration
 
-## Data Cleaning
+All datasets will be transformed into a common
+geographic framework.
 
-- Removed duplicate rows
-- Filled missing values
-- Converted coordinates
+## 4. EV Demand Analysis
 
----
+Estimate potential charging demand using:
 
-## Exploratory Data Analysis
+- EV ownership
+- EV growth
+- Population
+- Vehicle type
+- Travel demand
 
-- Distribution of EV ownership
-- Heatmap
-- Correlation
+## 5. Infrastructure Gap Analysis
 
----
+Evaluate:
 
-## Feature Engineering
+- Existing charging stations
+- Station density
+- Distance to existing stations
+- Charging capacity
 
-Created
+## 6. Accessibility Analysis
 
-- EV Density
-- Parking Score
-- Grid Score
+Evaluate:
 
----
+- Road connectivity
+- Traffic
+- Major roads
+- Parking
+- Nearby commercial activity
 
-## Machine Learning
+## 7. Location Scoring
 
-Model:
-Random Forest
+Normalize relevant variables and combine them
+using a documented scoring methodology.
 
-Target:
-Daily Charging Sessions
+## 8. Financial Analysis
 
-Evaluation:
-RMSE
-MAE
-R²
+Estimate:
 
----
+- Charging sessions
+- Energy consumption
+- Revenue
+- Operating costs
+- Initial investment
+- Payback period
 
-## Financial Analysis
+## 9. Location Ranking
 
-- ROI
-- Payback Period
+Rank candidate locations using the final
+location suitability score.
+
+## 10. Dashboard
+
+Present results through an interactive
+geospatial dashboard.
