@@ -1,470 +1,309 @@
 # EV Charging Infrastructure Siting & Location Analytics
 
-## Theme Information
+## CTY-12 — City
 
-- **Theme ID:** CTY-12
-- **Category:** City
-- **Theme:** EV Charging Infrastructure Siting
-- **Project Type:** Business Analytics / Decision Support System
-- **Status:** Project Development
-
----
-
-## 1. Project Overview
-
-This project aims to develop a data-driven decision-support system for identifying and ranking suitable locations for new Electric Vehicle (EV) charging stations within a selected city.
-
-The system will combine EV ownership, existing charging infrastructure, accessibility, locality characteristics, environmental indicators, EV usage patterns, and estimated station economics to determine which areas have the highest potential for future EV charging infrastructure.
-
-The system will not directly recommend or guarantee that a charging station should be constructed at a particular location. Instead, it will provide a comparative ranking of candidate locations based on measurable factors and analytical scores.
+**Project Type:** Business Analytics / Decision Support System  
+**Domain:** Electric Vehicle Infrastructure / Urban Mobility / Data Analytics  
+**Primary Language:** R  
+**Repository:** `ev-charging-infrastructure-siting`
 
 ---
 
-## 2. Problem Statement
+# 1. Project Overview
 
-The increasing adoption of electric vehicles creates a growing requirement for accessible and strategically located charging infrastructure.
+The rapid adoption of Electric Vehicles (EVs) is creating an increasing need for accessible, reliable, and strategically distributed charging infrastructure.
 
-However, selecting locations for new charging stations requires consideration of multiple factors, including:
+However, the installation of EV charging stations is not simply a matter of placing chargers wherever EVs are present.
 
-- Existing EV ownership
-- EV adoption potential
-- Traffic and accessibility
+A suitable charging location needs to consider multiple dimensions:
+
+- EV ownership and adoption
+- Vehicle category
 - Existing charging infrastructure
-- Population and locality characteristics
-- Economic activity
-- Environmental conditions
-- Charging demand
-- Operating costs
-- Expected revenue
-- Payback period
-
-The objective of this project is to integrate these factors into a Business Analytics framework that can help infrastructure planners compare potential locations objectively.
-
----
-
-## 3. Project Objectives
-
-The project aims to:
-
-1. Analyse the existing distribution of EVs within the selected city.
-2. Map existing EV charging stations.
-3. Identify areas with potential gaps in charging infrastructure.
-4. Analyse traffic, accessibility and surrounding locality characteristics.
-5. Estimate potential EV charging demand.
-6. Compare potential demand between electric 2-wheelers and 4-wheelers.
-7. Estimate potential charging revenue and operating economics.
-8. Calculate an estimated station payback period.
-9. Develop a location suitability scoring model.
-10. Generate a ranked leaderboard of candidate locations.
-11. Present the results through an interactive analytical dashboard.
-
----
-
-## 4. Key Business Questions
-
-The system will attempt to answer questions such as:
-
-- Where is EV ownership currently concentrated?
-- Which areas have high EV demand but relatively low charging infrastructure?
-- Which locations have better accessibility and traffic potential?
-- Which localities have higher potential for future EV adoption?
-- How does existing competition affect the suitability of a new charging station?
-- What is the estimated charging demand of a candidate area?
-- What proportion of demand may come from 2-wheelers versus 4-wheelers?
-- What is the estimated revenue potential of a candidate location?
-- How long could the initial infrastructure investment take to recover under the model assumptions?
-- Which candidate locations receive the highest overall analytical score?
-
----
-
-## 5. Data Sources
-
-The project will combine data from multiple sources.
-
-### EV Registration Data
-Potential source:
-- VAHAN / Ministry of Road Transport and Highways
-
-Possible variables:
-- EV registrations
-- Vehicle type
-- Fuel type
-- Regional/RTO-level adoption
-
-### Existing Charging Stations
-Potential sources:
-- Open Charge Map
-- Government open-data sources
-
-Possible variables:
-- Latitude
-- Longitude
-- Station/operator
-- Charger information
-- Connector type
-- Charging capacity
-
-### Geographic and Locality Data
-Potential source:
-- OpenStreetMap
-
-Possible variables:
-- Roads
-- Highways
-- Intersections
-- Residential areas
-- Commercial areas
-- Parking facilities
-- Hospitals
-- Universities
-- Shopping areas
-- Other points of interest
-
-### Population and Socioeconomic Data
-Potential sources:
-- Census of India
-- MOSPI
-- Other official government datasets
-
-Possible variables:
-- Population
-- Households
-- Population density
-- Employment indicators
-- Consumption/economic indicators
-
-### Environmental Data
-Potential sources:
-- Central Pollution Control Board
-- Government open-data platforms
-
-Possible variables:
-- AQI
-- PM2.5
-- PM10
-- NO2
-- SO2
-- Other available environmental indicators
-
-### EV Specifications
-Potential sources:
-- Manufacturer specifications
-- Open datasets
-
-Possible variables:
-- Vehicle type
-- Battery capacity
-- Claimed range
-- Energy efficiency
-
----
-
-## 6. Analytical Framework
-
-The project will follow the following workflow:
-
-Data Collection
-        ↓
-Data Cleaning & Integration
-        ↓
-Geospatial Analysis
-        ↓
-EV Demand Analysis
-        ↓
-Infrastructure Gap Analysis
-        ↓
-Accessibility Analysis
-        ↓
-Location Suitability Scoring
-        ↓
-Revenue Estimation
-        ↓
-Payback Analysis
-        ↓
-Location Ranking
-        ↓
-Interactive Dashboard
-
----
-
-## 7. Key Analytical Factors
-
-### A. EV Demand Potential
-
-Factors may include:
-
-- EV registrations
-- EV growth
-- Population density
-- Vehicle density
-- Estimated EV adoption
-- Travel demand
-- EV type distribution
-
-### B. Infrastructure Gap
-
-Factors may include:
-
-- Number of existing charging stations
-- Distance to existing stations
-- Charger density
-- Charging capacity
-- Existing station concentration
-
-### C. Accessibility
-
-Factors may include:
-
-- Traffic
-- Road connectivity
-- Major road proximity
-- Highway proximity
+- Charging infrastructure gaps
+- Traffic and accessibility
 - Parking availability
-- Nearby commercial activity
+- Residential and commercial activity
+- Population and locality characteristics
+- Potential charging demand
+- Installation and operating costs
+- Revenue potential
+- Investment recovery period
 
-### D. Locality Potential
+This project aims to develop a **data-driven decision-support system for EV charging infrastructure siting**.
 
-Factors may include:
+The system will analyse available EV, transportation, geographic, infrastructure, and socioeconomic data to identify and rank areas that have stronger potential for future EV charging infrastructure.
 
-- Population
-- Economic activity
-- Residential density
-- Commercial density
-- Offices
-- Shopping centres
-- Hospitals
-- Universities
+The project is therefore approached as a **Business Analytics problem**, rather than only as a machine-learning or programming problem.
 
-### E. Environmental / Sustainability Context
+The central business question is:
 
-Factors may include:
-
-- AQI
-- PM2.5
-- PM10
-- Existing environmental initiatives
-- Public transport accessibility
-- EV adoption
-
-### F. Financial Viability
-
-Factors may include:
-
-- Estimated charging sessions
-- Average energy consumed
-- Charging tariff
-- Estimated revenue
-- Electricity cost
-- Maintenance cost
-- Infrastructure cost
-- Land/lease cost
-- Estimated payback period
+> **Where should new EV charging infrastructure be installed so that it has strong demand potential, addresses infrastructure gaps, remains accessible to users, and provides reasonable financial viability?**
 
 ---
 
-## 8. Location Suitability Score
+# 2. Business Problem
 
-A composite score will be developed to compare candidate locations.
+The increasing number of EVs creates a growing requirement for charging infrastructure.
 
-The score may combine:
+However, charging stations involve significant investment in:
 
-- EV Demand Potential
-- Accessibility
-- Infrastructure Gap
-- Locality Potential
-- Environmental/Sustainability Factors
-- Financial Viability
+- Land
+- Electrical infrastructure
+- Charging equipment
+- Installation
+- Maintenance
+- Operations
 
-The final weights will be determined after data availability and exploratory analysis rather than being arbitrarily fixed at the beginning of the project.
+If stations are installed in locations with insufficient demand, the result may be:
 
----
+- Low utilization
+- Poor return on investment
+- Long payback periods
+- Underused infrastructure
+- Inefficient allocation of capital
+- Poor user experience
 
-## 9. Financial Analysis
+On the other hand, concentrating all charging infrastructure in already-developed areas may create charging gaps in emerging EV-adoption regions.
 
-For candidate locations, the project will estimate:
+Therefore, the problem is not simply:
 
-### Revenue
+> "Where are EVs located?"
 
-Estimated charging sessions
-×
-Average energy consumed per session
-×
-Charging tariff
+It is:
 
-### Operating Profit
-
-Estimated revenue
-−
-Estimated operating costs
-
-### Payback Period
-
-Initial investment
-÷
-Estimated annual net cash flow
-
-All financial values derived from assumptions will be clearly labelled as **estimated/modelled values**, rather than actual station-level financial transactions.
+> **"Which locations provide the strongest combination of EV demand, infrastructure need, accessibility, feasibility, and financial potential?"**
 
 ---
 
-## 10. 2-Wheeler vs 4-Wheeler Analysis
+# 3. Core Business Objective
 
-The project will separately analyse:
+The primary objective of the project is to develop a data-driven framework that can:
 
-- Electric 2-wheelers
-- Electric 4-wheelers
+1. Understand the geographic distribution of EVs.
+2. Analyse the existing charging infrastructure.
+3. Identify potential charging infrastructure gaps.
+4. Estimate charging demand.
+5. Identify and evaluate candidate locations.
+6. Rank candidate locations using a suitability score.
+7. Estimate potential financial performance.
+8. Calculate an estimated payback period.
+9. Provide analytical visualizations and maps.
+10. Support decision-making for future EV charging infrastructure investment.
 
-Potential differences in:
-
-- Battery capacity
-- Charging requirement
-- Charging frequency
-- Charging duration
-- Energy consumption
-- Average charging revenue
-
-This will help estimate the type of charging demand expected at different locations.
+The output will be a **decision-support system**, not an automatic construction or investment decision.
 
 ---
 
-## 11. Business Analytics Components
+# 4. Project Objectives
 
-### Descriptive Analytics
+## 4.1 EV Demand Analysis
 
-Analyse:
+Analyse the distribution of EVs across the selected study area.
 
-- Existing EV distribution
-- Charging station distribution
+The analysis will investigate:
+
+- Total EV registrations
 - EV growth
-- Traffic/accessibility
+- EV categories
+- Geographic concentration
+- RTO-level distribution
+- EV adoption patterns
+- Vehicle-type distribution
+
+---
+
+## 4.2 Charging Infrastructure Analysis
+
+Analyse existing EV charging infrastructure.
+
+The analysis will investigate:
+
+- Existing charging station locations
+- Station density
+- Geographic distribution
+- Charging capacity where available
+- Charger/connector types where available
+- Distance between stations
+- Areas with relatively low infrastructure availability
+
+---
+
+## 4.3 Infrastructure Gap Analysis
+
+Identify areas where:
+
+- EV concentration is relatively high
+- Existing charging infrastructure is relatively low
+- Accessibility is suitable
+- Potential charging demand is high
+
+These areas may represent potential infrastructure gaps.
+
+---
+
+## 4.4 Accessibility Analysis
+
+Evaluate whether potential charging locations are convenient for users.
+
+Possible factors include:
+
+- Road connectivity
+- Major roads
+- Highways
+- Traffic
+- Parking availability
+- Commercial activity
+- Nearby public facilities
+- Accessibility to surrounding population
+
+---
+
+## 4.5 Location Suitability Analysis
+
+Develop a location scoring framework that combines relevant factors to produce a comparable suitability score for candidate locations.
+
+Potential factors include:
+
+- EV demand potential
+- Infrastructure gap
+- Accessibility
+- Parking
 - Locality characteristics
-
-### Diagnostic Analytics
-
-Analyse:
-
-- Why certain areas have higher EV demand
-- Why infrastructure gaps exist
-- Relationship between EV ownership and charging infrastructure
-- Factors associated with location suitability
-
-### Predictive Analytics
-
-Potential extensions:
-
-- EV adoption forecasting
-- Charging demand forecasting
-- Future infrastructure requirement estimation
-
-### Prescriptive Analytics
-
-The system will provide:
-
-- Candidate-location rankings
-- Suitability scores
-- Financial viability comparisons
-- Historical/modelled scenario comparisons
-
-The system will function as a decision-support tool rather than directly making investment or construction decisions.
+- Commercial activity
+- Financial feasibility
 
 ---
 
-## 12. Expected Output
+## 4.6 Financial Analysis
 
-The final system is expected to provide:
+Estimate the potential economics of shortlisted locations.
 
-- Interactive city map
-- Existing charging station map
-- EV ownership analysis
-- Infrastructure gap map
-- Candidate-location analysis
-- Location suitability score
-- 2W vs 4W demand analysis
-- Estimated revenue
-- Estimated payback period
-- Location leaderboard
-- Interactive dashboard
+Possible measures include:
 
----
-
-## 13. Technology Stack
-
-### Programming
-- Python
-
-### Data Analysis
-- Pandas
-- NumPy
-- SciPy
-- Scikit-learn
-
-### Visualization
-- Matplotlib
-- Plotly
-
-### Geospatial Analysis
-- GeoPandas
-- OSMnx
-- Folium / Plotly Maps
-
-### Data Collection
-- APIs
-- Open Government Data
-- OpenStreetMap
-- Public datasets
-
-### Dashboard
-- Streamlit
-
-### Development
-- Google Colab
-- Jupyter Notebook
-- Git
-- GitHub
+- Charging sessions
+- Energy consumed
+- Charging revenue
+- Operating costs
+- Initial investment
+- Annual net cash flow
+- Payback period
+- ROI where sufficient information is available
 
 ---
 
-## 14. Repository Structure
+## 4.7 Final Recommendation
+
+Rank candidate locations based on the analytical framework and provide a clear interpretation of why higher-ranked locations perform better.
+
+---
+
+# 5. Key Business Questions
+
+The project will attempt to answer the following questions.
+
+## EV Demand
+
+- Where are EVs concentrated?
+- Which vehicle categories are most common?
+- How does EV distribution vary geographically?
+- Which EV categories are most relevant to public charging infrastructure?
+- Is EV adoption increasing in particular areas?
+
+---
+
+## Charging Infrastructure
+
+- Where are existing charging stations located?
+- Which areas have high charging-station density?
+- Which areas have relatively low charging infrastructure?
+- How far are users potentially located from existing stations?
+- Are charging stations concentrated in particular parts of the city?
+
+---
+
+## Infrastructure Gap
+
+- Which areas have high EV demand but comparatively low charging infrastructure?
+- Which regions may be underserved?
+- Where could additional charging infrastructure potentially provide greater value?
+
+---
+
+## Accessibility
+
+- Which candidate locations are easily accessible?
+- Which areas are close to major roads?
+- Which areas have parking availability?
+- Which areas have high surrounding activity?
+
+---
+
+## Demand
+
+- Which factors are associated with charging demand?
+- Does EV density influence charging demand?
+- Does traffic influence potential utilization?
+- Does commercial activity influence potential charging demand?
+- Does proximity to existing stations affect location potential?
+
+---
+
+## Financial Viability
+
+- Which locations have higher potential utilization?
+- What is the estimated revenue?
+- What are the estimated operating costs?
+- What is the estimated annual net cash flow?
+- How long might it take to recover the initial investment?
+
+---
+
+# 6. Project Thought Process
+
+The project follows a structured Business Analytics approach.
+
+The thought process is:
 
 ```text
-ev-charging-infrastructure-siting/
-│
-├── README.md
-├── proposal.Rmd
-├── requirements.txt
-├── .gitignore
-│
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   ├── geographic/
-│   └── external/
-│
-├── notebooks/
-│   ├── 01_data_collection.ipynb
-│   ├── 02_data_preprocessing.ipynb
-│   ├── 03_exploratory_analysis.ipynb
-│   ├── 04_geospatial_analysis.ipynb
-│   ├── 05_ev_demand_analysis.ipynb
-│   ├── 06_infrastructure_gap_analysis.ipynb
-│   ├── 07_location_scoring.ipynb
-│   ├── 08_financial_analysis.ipynb
-│   └── 09_dashboard.ipynb
-│
-├── src/
-│   ├── data_collection.py
-│   ├── preprocessing.py
-│   ├── geospatial.py
-│   ├── demand.py
-│   ├── scoring.py
-│   ├── financial.py
-│   └── visualization.py
-│
-├── dashboard/
-│   └── app.py
-│
-├── reports/
-│
-├── assets/
-│
-└── tests/
+Business Problem
+        ↓
+Understand EV Charging Requirements
+        ↓
+Identify Factors Affecting Demand
+        ↓
+Identify Required Data
+        ↓
+Collect Data
+        ↓
+Inspect Data
+        ↓
+Clean & Prepare Data
+        ↓
+Explore Data
+        ↓
+Understand EV Distribution
+        ↓
+Analyse Existing Charging Infrastructure
+        ↓
+Identify Infrastructure Gaps
+        ↓
+Analyse Accessibility
+        ↓
+Engineer Features
+        ↓
+Estimate Charging Demand
+        ↓
+Identify Candidate Locations
+        ↓
+Score Candidate Locations
+        ↓
+Estimate Revenue & Costs
+        ↓
+Calculate Payback Period
+        ↓
+Rank Locations
+        ↓
+Generate Maps & Visualizations
+        ↓
+Provide Recommendations
